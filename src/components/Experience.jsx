@@ -3,9 +3,9 @@ import React from "react";
 function Experience() {
   const experiences = [
     {
-      role: "Full Stack Mobile Developer",
+      role: "Mobile Application Developer",
       company: "Buying Buddy",
-      year: "2025",
+      year: "Oct 2025 - Present",
       desc: "React Native | Expo | TypeScript",
       details: [
         "Architected and developed a cross-platform mobile marketplace connecting car brokers with customers, supporting iOS, Android, and Web.",
