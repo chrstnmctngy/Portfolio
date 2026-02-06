@@ -3,13 +3,13 @@ import React from "react";
 function About() {
   return (
     <section id="about" className="py-24 bg-white dark:bg-neutral-950 transition-colors duration-300">
-      <div className="max-w-3xl mx-auto px-6">
+      <div className="max-w-5xl mx-auto px-6">
         <p className="text-sm font-mono text-neutral-500 mb-2 tracking-widest uppercase">
           Who I Am
         </p>
         <h2 className="text-3xl font-bold text-neutral-900 dark:text-white mb-8 transition-colors">About Me</h2>
 
-        <div className="space-y-4 text-neutral-600 dark:text-neutral-400 leading-relaxed transition-colors">
+        <div className="max-w-3xl space-y-4 text-neutral-600 dark:text-neutral-400 leading-relaxed transition-colors">
           <p>
             I'm Christian Macatangay, a Full Stack Developer and IT graduate
             with experience shipping{" "}

@@ -19,7 +19,7 @@ function App() {
         <Experience />
         <Work />
         <Contact />
-        <footer className="py-6 text-center text-neutral-400 dark:text-neutral-600 text-sm font-mono border-t border-gray-200 dark:border-neutral-900 transition-colors duration-300">
+        <footer className="py-6 text-center text-neutral-400 dark:text-neutral-600 text-sm font-mono bg-gray-50 dark:bg-neutral-900 transition-colors duration-300">
           &copy; {new Date().getFullYear()} Christian Macatangay
         </footer>
       </div>

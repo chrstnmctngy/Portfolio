@@ -66,13 +66,13 @@ function Experience() {
 
   return (
     <section id="experience" className="py-24 bg-white dark:bg-neutral-950 transition-colors duration-300">
-      <div className="max-w-4xl mx-auto px-6">
+      <div className="max-w-5xl mx-auto px-6">
         <p className="text-sm font-mono text-neutral-500 mb-2 tracking-widest uppercase">
           Career
         </p>
         <h2 className="text-3xl font-bold text-neutral-900 dark:text-white mb-16 transition-colors">Experience</h2>
 
-        <div className="space-y-0">
+        <div className="max-w-4xl space-y-0">
           {experiences.map((exp, index) => (
             <div
               key={index}
@@ -84,7 +84,7 @@ function Experience() {
                 <h3 className="text-lg font-semibold text-neutral-900 dark:text-white group-hover:text-neutral-700 dark:group-hover:text-white/90 transition-colors">
                   {exp.role}
                 </h3>
-                <span className="text-sm text-neutral-500 font-mono shrink-0 sm:ml-4">
+                <span className="text-sm text-neutral-500 font-mono shrink-0 whitespace-nowrap sm:ml-4">
                   {exp.year}
                 </span>
               </div>
