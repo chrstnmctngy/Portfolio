@@ -132,9 +132,9 @@ function ProjectCard({ project }) {
       )}
 
       <div className="p-6">
-        <div className="flex items-center justify-between mb-2">
-          <h3 className="text-lg font-semibold text-neutral-900 dark:text-white transition-colors">{project.title}</h3>
-          <span className="text-xs text-neutral-500 font-mono">{project.year}</span>
+        <div className="flex items-start justify-between gap-3 mb-2">
+          <h3 className="text-lg font-semibold text-neutral-900 dark:text-white transition-colors min-w-0">{project.title}</h3>
+          <span className="text-xs text-neutral-500 font-mono shrink-0 whitespace-nowrap pt-1">{project.year}</span>
         </div>
 
         <p className="text-neutral-600 dark:text-neutral-400 text-sm leading-relaxed mb-4 transition-colors">{project.desc}</p>
