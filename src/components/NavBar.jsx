@@ -1,43 +1,85 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-scroll";
-import { HiMenu, HiX } from "react-icons/hi";
+import { HiMenu, HiX, HiSun, HiMoon } from "react-icons/hi";
+import { useTheme } from "../ThemeContext";
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
-  const navItems = ["home", "about", "skills", "experience", "work", "contact"];
+  const [scrolled, setScrolled] = useState(false);
+  const { theme, toggleTheme } = useTheme();
+  const navItems = ["About", "Skills", "Experience", "Work", "Contact"];
+
+  useEffect(() => {
+    const handleScroll = () => setScrolled(window.scrollY > 20);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
-    <nav className="fixed w-full bg-white shadow-md z-50">
-      <div className="max-w-6xl mx-auto px-4 py-3 flex justify-between items-center">
-        <h1 className="text-2xl font-bold text-indigo-600">MyPortfolio</h1>
-
-        <ul className="hidden md:flex space-x-6">
-          {navItems.map((item) => (
-            <li key={item}>
-              <Link
-                to={item}
-                smooth={true}
-                duration={500}
-                offset={-70}
-                className="cursor-pointer text-gray-700 hover:text-indigo-600 transition"
-              >
-                {item.charAt(0).toUpperCase() + item.slice(1)}
-              </Link>
-            </li>
-          ))}
-        </ul>
-
-        <button
-          className="md:hidden text-2xl text-gray-700"
-          onClick={() => setIsOpen(!isOpen)}
+    <nav
+      className={`fixed w-full z-50 transition-all duration-300 ${
+        scrolled
+          ? "bg-white/90 dark:bg-neutral-950/90 backdrop-blur-md border-b border-gray-200/50 dark:border-neutral-800/50"
+          : "bg-transparent"
+      }`}
+    >
+      <div className="max-w-5xl mx-auto px-6 py-4 flex justify-between items-center">
+        <Link
+          to="home"
+          smooth={true}
+          duration={500}
+          className="cursor-pointer text-lg font-bold text-neutral-900 dark:text-white tracking-tight"
         >
-          {isOpen ? <HiX /> : <HiMenu />}
-        </button>
+          cm.
+        </Link>
+
+        <div className="hidden md:flex items-center gap-8">
+          <ul className="flex items-center gap-8">
+            {navItems.map((item) => (
+              <li key={item}>
+                <Link
+                  to={item}
+                  smooth={true}
+                  duration={500}
+                  offset={-70}
+                  className="cursor-pointer text-sm text-neutral-500 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white transition-colors duration-200 font-mono"
+                >
+                  {item}
+                </Link>
+              </li>
+            ))}
+          </ul>
+
+          <button
+            onClick={toggleTheme}
+            className="p-2 text-neutral-500 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white transition-colors duration-200"
+            aria-label="Toggle theme"
+          >
+            {theme === "dark" ? <HiSun size={18} /> : <HiMoon size={18} />}
+          </button>
+        </div>
+
+        <div className="md:hidden flex items-center gap-3">
+          <button
+            onClick={toggleTheme}
+            className="p-2 text-neutral-500 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white transition-colors"
+            aria-label="Toggle theme"
+          >
+            {theme === "dark" ? <HiSun size={18} /> : <HiMoon size={18} />}
+          </button>
+          <button
+            className="text-xl text-neutral-500 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white transition-colors"
+            onClick={() => setIsOpen(!isOpen)}
+            aria-label="Toggle menu"
+          >
+            {isOpen ? <HiX /> : <HiMenu />}
+          </button>
+        </div>
       </div>
 
       {isOpen && (
-        <div className="md:hidden bg-white shadow-md">
-          <ul className="flex flex-col items-center space-y-4 py-4">
+        <div className="md:hidden bg-white/95 dark:bg-neutral-950/95 backdrop-blur-md border-t border-gray-200/50 dark:border-neutral-800/50">
+          <ul className="flex flex-col items-center gap-6 py-8">
             {navItems.map((item) => (
               <li key={item}>
                 <Link
@@ -46,9 +88,9 @@ function Navbar() {
                   duration={500}
                   offset={-70}
                   onClick={() => setIsOpen(false)}
-                  className="cursor-pointer text-gray-700 hover:text-indigo-600 transition"
+                  className="cursor-pointer text-sm text-neutral-500 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white transition-colors duration-200 font-mono"
                 >
-                  {item.charAt(0).toUpperCase() + item.slice(1)}
+                  {item}
                 </Link>
               </li>
             ))}

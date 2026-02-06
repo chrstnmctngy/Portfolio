@@ -1,4 +1,5 @@
 import React from "react";
+import { ThemeProvider } from "./ThemeContext";
 import Navbar from "./components/NavBar";
 import Landing from "./components/Landing";
 import About from "./components/About";
@@ -9,8 +10,8 @@ import Contact from "./components/Contact";
 
 function App() {
   return (
-    <>
-      <div className="font-sans">
+    <ThemeProvider>
+      <div className="bg-gray-50 text-neutral-900 dark:bg-neutral-950 dark:text-white antialiased transition-colors duration-300">
         <Navbar />
         <Landing />
         <About />
@@ -18,12 +19,11 @@ function App() {
         <Experience />
         <Work />
         <Contact />
-        <footer className="py-6 text-center text-gray-500">
-          © {new Date().getFullYear()} Christian’s Portfolio. All rights
-          reserved.
+        <footer className="py-6 text-center text-neutral-400 dark:text-neutral-600 text-sm font-mono border-t border-gray-200 dark:border-neutral-900 transition-colors duration-300">
+          &copy; {new Date().getFullYear()} Christian Macatangay
         </footer>
       </div>
-    </>
+    </ThemeProvider>
   );
 }
 
