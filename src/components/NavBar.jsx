@@ -38,7 +38,7 @@ function Navbar() {
             {navItems.map((item) => (
               <li key={item}>
                 <Link
-                  to={item}
+                  to={item.toLowerCase()}
                   smooth={true}
                   duration={500}
                   offset={-70}
@@ -83,7 +83,7 @@ function Navbar() {
             {navItems.map((item) => (
               <li key={item}>
                 <Link
-                  to={item}
+                  to={item.toLowerCase()}
                   smooth={true}
                   duration={500}
                   offset={-70}
