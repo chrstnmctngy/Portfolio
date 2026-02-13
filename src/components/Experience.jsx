@@ -78,7 +78,7 @@ function Experience() {
               key={index}
               className="relative pl-8 pb-12 border-l border-gray-200 dark:border-neutral-800 last:pb-0 group transition-colors"
             >
-              <div className="absolute -left-[5px] top-1 w-2.5 h-2.5 rounded-full bg-gray-300 dark:bg-neutral-700 group-hover:bg-neutral-900 dark:group-hover:bg-white transition-colors duration-300" />
+              <div className="absolute -left-1.25 top-1 w-2.5 h-2.5 rounded-full bg-gray-300 dark:bg-neutral-700 group-hover:bg-neutral-900 dark:group-hover:bg-white transition-colors duration-300" />
 
               <div className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between mb-1">
                 <h3 className="text-lg font-semibold text-neutral-900 dark:text-white group-hover:text-neutral-700 dark:group-hover:text-white/90 transition-colors">

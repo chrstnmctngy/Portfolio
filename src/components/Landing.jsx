@@ -9,7 +9,7 @@ function Landing() {
       id="home"
       className="min-h-screen flex flex-col justify-center items-center relative bg-white dark:bg-neutral-950 px-6 overflow-hidden transition-colors duration-300"
     >
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,_rgba(99,102,241,0.04)_0%,_transparent_70%)] dark:bg-[radial-gradient(circle_at_50%_50%,_rgba(255,255,255,0.03)_0%,_transparent_70%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(99,102,241,0.04)_0%,transparent_70%)] dark:bg-[radial-gradient(circle_at_50%_50%,rgba(255,255,255,0.03)_0%,transparent_70%)]" />
 
       <div className="relative z-10 max-w-2xl mx-auto text-center">
         <div className="mb-8">

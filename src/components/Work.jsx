@@ -110,7 +110,7 @@ function ProjectCard({ project }) {
             alt={project.title}
             className="w-full h-60 object-cover group-hover:scale-105 transition-transform duration-500"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/40 dark:from-neutral-900/80 to-transparent" />
+          <div className="absolute inset-0 bg-linear-to-t from-black/40 dark:from-neutral-900/80 to-transparent" />
           <div className="absolute bottom-3 left-3 flex gap-1.5">
             {project.images.map((_, i) => (
               <button
@@ -124,7 +124,7 @@ function ProjectCard({ project }) {
           </div>
         </div>
       ) : (
-        <div className="h-60 bg-gradient-to-br from-gray-100 to-gray-200 dark:from-neutral-800 dark:to-neutral-900 flex items-center justify-center">
+        <div className="h-60 bg-linear-to-br from-gray-100 to-gray-200 dark:from-neutral-800 dark:to-neutral-900 flex items-center justify-center">
           <span className="text-5xl font-bold text-gray-300 dark:text-neutral-700 font-mono transition-colors">
             {project.title.split(" ").map(w => w[0]).join("")}
           </span>
