@@ -23,12 +23,12 @@ function Work() {
   const projects = [
     {
       title: "Buying Buddy",
-      year: "2025",
+      year: "2025 - Present",
       desc: "A cross-platform mobile marketplace connecting car brokers with customers. Features include MVVM architecture, JWT authentication, advanced search with multi-parameter filtering, offer/negotiation workflows, push notifications, and OTA updates.",
       tech: ["React Native", "Expo", "TypeScript", "TanStack Query", "React Native Paper"],
       images: [BBOne, BBTwo, BBThree, BBFour, BBFive, BBSix],
       highlights: [
-        "Cross-platform (iOS, Android, Web)",
+        "Cross-platform (iOS, Android)",
         "MVVM Architecture",
         "Real-time Negotiations"
       ]
